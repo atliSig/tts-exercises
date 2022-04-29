@@ -102,7 +102,7 @@ All the steps to train the model are performed inside `/usr/local/src/lvl_is_txt
 
 2. The script will download the voice data that you have selected (f1 or m1):
 
-        wget https://eyra.ru.is/gogn/${VOX}-small.zip
+        wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip
 
 3. We then convert the voice data to the right format, 16 bit single channel at 16 kHz:
 
@@ -151,7 +151,7 @@ All the steps to train the model are performed inside `/usr/local/src/lvl_is_txt
 
     3. Apply a pretrained Sequitur G2P model to words in training data
 
-            wget https://eyra.ru.is/gogn/ipd_clean_slt2018.mdl
+            wget https://eyra.ru.is/ttsdatawebstoragefolder/ipd_clean_slt2018.mdl
             g2p.py --model ipd_clean_slt2018.mdl --apply vocabulary.txt --encoding utf-8 > lexicon-prompts.txt
 
     4. Create a combined lexicon
@@ -238,7 +238,7 @@ You will have to edit this part of `build-voice.sh` to train on your own data:
         git commit -q -m 'Setup for Clustergen complete.'
 
         # Unpack the wave files into the ./wav directory:
-        #wget https://eyra.ru.is/gogn/${VOX}-small.zip
+        #wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip
         unzip m1-small.zip 1> unzip.log 2>unzip.err
 
 * Create a copy of `build-voice.sh` under `lvl_is_txt` called `custom-voice-build.sh`
@@ -273,7 +273,7 @@ At `./data/build-unit-selection.sh` you will find a script similar to the `build
 * Copy this script over to the `lvl_is_text` directory in your container (do `chmod +x <your_script_name>.sh` if needed)
 * To avoid having to download everything again, do the following:
     * create a folder called `data` at `/usr/local/src`
-    * Copy the `ipd_clean_slt2018.mdl` from your existing voice building directory (or download it via `wget https://eyra.ru.is/gogn/ipd_clean_slt2018.mdl`) into `data/`
+    * Copy the `ipd_clean_slt2018.mdl` from your existing voice building directory (or download it via `wget https://eyra.ru.is/ttsdatawebstoragefolder/ipd_clean_slt2018.mdl`) into `data/`
     * Copy your collection `.zip` file into `data/`
 * Create a new voice building directory at `usr/local/src` (e.g `my_unit_selection_voice`)
 * Change line 16 in `build-unit-selection.sh` to e.g. `VOX=atli.zip` if that's the name of your zip (note: the .zip file can only contain English alphabetical characters)
