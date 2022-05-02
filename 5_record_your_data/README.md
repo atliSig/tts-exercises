@@ -111,7 +111,7 @@ We are very understanding of the fact that some of you have limited knowledge of
 Instead of recording your own data you will be using a pre-recorded Icelandic TTS dataset, available [here (male)](https://eyra.ru.is/ttsdatawebstoragefolder/m1-small.zip) or [here (female)](https://eyra.ru.is/ttsdatawebstoragefolder/f1-small.zip).
 
 Your task is the following:
-1. The script [create_corpus.py](./tools/create_corpus.py) in the archive creates a tab-seperated file similar to list.tsv in the data directory of assignment 4. You have to create a new reading list like you did in assignment 4 using this new source of text.
+1. The script [create_corpus.py](./tools/create_corpus.py) (in the tools directory) creates a tab-seperated file similar to list.tsv in the data directory of assignment 4. You have to create a new reading list like you did in assignment 4 using this new source of text.
 2. Run your reading list generation script from assignment 4 again on this file. Note that this time the file has this scheme: `recording_id`\t`sentence`\t`pronounciation` so you need to change the `read_list` and `save_list` from `tools.py` in assignment 4 to account for this
 3. You don't have to save your new reading list in the format mentioned in assignment 4, you only need to capture the coverage of this list and make a similar report as in assignment 4. You **have** to store the IDs of the recordings you have selected to continue.
 4. Store the IDs of your selected recordings somewhere safe. You will use these IDs to create your TTS training dataset. You can read more about what each of the files contain in the `README` and `example.py` under assignment 5.
