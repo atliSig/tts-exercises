@@ -108,7 +108,7 @@ After downloading your data you should trim the recordings:
 # Alternative assignment for foreign students
 We are very understanding of the fact that some of you have limited knowledge of Icelandic and would likely prefer to complete the assignment in your own language. Unfortunately we cannot facilitate the work that is required to prepare TTS models for multiple languages since we only have access to Icelandic data. Therefore we have prepared an alternative assignment for you that doesn't require you to speak Icelandic.
 
-Instead of recording your own data you will be using a pre-recorded Icelandic TTS dataset, available [here (male)](eyra.ru.is/ttsdatawebstoragefolder/m1-small.zip) or [here (female)](eyra.ru.is/ttsdatawebstoragefolder/f1-small.zip).
+Instead of recording your own data you will be using a pre-recorded Icelandic TTS dataset, available [here (male)](https://eyra.ru.is/ttsdatawebstoragefolder/m1-small.zip) or [here (female)](https://eyra.ru.is/ttsdatawebstoragefolder/f1-small.zip).
 
 Your task is the following:
 1. The script `create_corpus.py` in the archive creates a tab-seperated file similar to list.tsv in the data directory of assignment 4. You have to create a new reading list like you did in assignment 4 using this new source of text.
