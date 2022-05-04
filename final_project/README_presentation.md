@@ -32,7 +32,7 @@ The list below is basically a copy of that from the report README. You don't hav
 
 3. Results and MOS
 
-    Include results from the MOS assignment. Specifically, for each group (Festival, Ossian, Ground truth) do the following:
+    Include results from the MOS assignment. Specifically, for each group (Festival, Ground truth) do the following:
     * What is the average MOS score for each sample and across all samples in the group.
     * Create a bar chart with a bar for each rating value (1-5) and set the height as the corresponding number of responses for the given value.
     * Create a plot with sample index on the x-axis and MOS score on the y-axis where you plot the graph of each participant's MOS response to  each question (on the same graph).
@@ -41,8 +41,6 @@ The list below is basically a copy of that from the report README. You don't hav
     Also comment on the following:
 
     * Your thoughts on the quality and nature of the two different Festival TTS models and in which way they sound different.
-    * Compare the results of training only on a subset of your dataset and the complete dataset using the Ossian recipe.
-    * Error plots for the Ossian recipe.
 
 ## Play samples
 Most importantly, we want to listen to your TTS. You can show off as many samples as you think you can fit into your presentation. In my opinion, it is both very interesting and fun to listen to bad synthesis samples that give you an idea about the limitations of your TTS. Don't worry about the quality too much.
