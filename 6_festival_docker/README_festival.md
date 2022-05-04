@@ -345,3 +345,13 @@ Your builds might fail and the reason for that should hopefully be written to th
    * Create the new .zip file. From within e.g. `data/atli` do: `zip -r ../atli.zip *`
    * A new `data/atli.zip` should now have appeared.
    * Try building your model again using the new zip file.
+
+## Updates you will have to make to the recipe:
+1. Because of an expired certificate you might have to append `--no-check-certificate` when calling `wget`. For example:
+   * This `wget https://eyra.ru.is/gogn/${VOX}-small.zip`
+   * Becomes `wget https://eyra.ru.is/gogn/${VOX}-small.zip --no-check-certificate`
+2. The URL to the demo data has changed. You will have to change the URLs accordingly. For example:
+   * This `https://eyra.ru.is/data/${VOX}-small.zip`
+   * Becomes `wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip`
+3. The directory structure of the demo data has changed, there is now a top-level directory inside the .zip called `anon_example` The simplest way to deal with this is to add the following command to the voice building script right after downloading the .zip file:
+   * `mv -v anon_example/* .`
