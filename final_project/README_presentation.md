@@ -48,16 +48,4 @@ The list below is basically a copy of that from the report README. You don't hav
 Most importantly, we want to listen to your TTS. You can show off as many samples as you think you can fit into your presentation. In my opinion, it is both very interesting and fun to listen to bad synthesis samples that give you an idea about the limitations of your TTS. Don't worry about the quality too much.
 
 
-## Presenting Remotely
-We will not present at the University. Instead I have decided to use [Google Meet](https://meet.google.com/). Why do I prefer Google Meet over Microsoft Teams? Google Meet offers a pretty easy way of sharing sysem audio in a presentation which is kinda important in this case. Therefore you should:
-* Create a Google Slides presentation since it's key to present via the browser.
-* To embed audio in your presentation, press `Insert` and select `audio`.
-* I will send you a link to the Google Meet session, open it in Google Chrome.
-* When it is your turn to present during the Google Meet session:
-    1. Have your presentation open in a seperate Google Chrome window.
-    2. Click `present now`
-    3. Select `A chrome tab`
-    4. Select the tab that contains your presentation.
-    5. Make sure that the `Presentation Audio` is set to on inside the Google Meet session.
-
 
