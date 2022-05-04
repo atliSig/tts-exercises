@@ -15,7 +15,6 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
 * Brief description of Festival in general
 * Brief description of unit selection in general.
 * Brief description of the Clustergen TTS and how it is different from unit selection.
-* Brief description of Ossian and the model you trained.
 
 ## Experimental Setup
 **(maximum 500 words)**
@@ -29,7 +28,6 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
 * Describe the recipe you used for the three different TTS models (or which steps are performed in these recipes):
     * Unit selection in Festival (steps)
     * Clustergen in Festival (steps)
-    * SPSS in Ossian (describe the model)
 
 ## Results
 * Script Design:
@@ -44,7 +42,7 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
 
     * The coverage of your new dataset
     * The waveform trim plots you did in assignment 5
-* MOS and comparisons: Include results from the MOS assignment. Specifically, for each group (Festival, Ossian, Ground truth) do the following:
+* MOS and comparisons: Include results from the MOS assignment. Specifically, for each group (Festival, Ground truth) do the following:
     * What is the average MOS score for each sample and across all samples in the group.
     * Create a bar chart with a bar for each rating value (1-5) and set the height as the corresponding number of responses for the given value.
     * Create a plot with sample index on the x-axis and MOS score on the y-axis where you plot the graph of each participant's MOS response to  each question (on the same graph).
@@ -52,8 +50,6 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
 
     Also comment on the following:
     * Your thoughts on the quality and nature of the two different Festival TTS models and in which way they sound different.
-    * Compare the results of training only on a subset of your dataset and the complete dataset using the Ossian recipe.
-    * Error plots for the Ossian recipe.
 
 ## Conclusions
 * Comment on which of the models you prefer and why. Put this into context with the amount of data that you trained on.
