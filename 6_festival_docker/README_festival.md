@@ -319,8 +319,43 @@ Now it's time to generate synthesis samples. All the tools you need are located 
 
 **Turn In**: Run this for both your Clustergen and Unit Selection voice. Send in the `tests.txt` file and the synthesized samples for both voices.
 
-## Troubleshooting
 
+## Updates you will have to make to the recipe:
+
+1. Because of an expired certificate you might have to append `--no-check-certificate` when calling `wget`. For example:
+   * This `wget https://eyra.ru.is/gogn/${VOX}-small.zip`
+   * Becomes `wget https://eyra.ru.is/gogn/${VOX}-small.zip --no-check-certificate`
+2. The URL to the demo data has changed. You will have to change the URLs accordingly. For example:
+   * This `https://eyra.ru.is/data/${VOX}-small.zip`
+   * Becomes `wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip`
+3. The
+4. The voice building script included in the docker image does not resample your dataset. Follow the resampling approach in e.g. [this script](/Users/atli/Work/tts-exercises/6_festival_docker/help/build-example-us-voice.sh) to resample your data. The section you need to add, after retrieving your data and before doing anything else is:
+   ```
+   for i in audio/*/*.wav
+   do
+	sox "$i" -r 16000 -c 1 -b 16 "wav/$(basename -s .wav "$i").wav" 1> sox.log 2> sox.err
+   done
+
+   ```
+This command assumes that your audio is under `./audio/*` and will then save the resampled data in the `./wav` directory. That means that you will not need to move your data anymore, e.g. the following can removed from the voice building script: `mv audio/*/*.wav wav/`.
+4. When running the `build-example-voice.sh`, the directory structure of the demo data has changed, there is now a top-level directory inside the .zip called `anon_example` The simplest way to deal with this is to add the following command to the voice building script right after downloading the .zip file: `mv -v anon_example/* .`
+
+
+## Helpful Advice
+Some of the components in the recipe take a long time to run. To avoid running these components multiple times you can simply store their output, after computing it once, and the retrieve it for each future run. For example
+  * After running `g2p.py` on the lexicon the script will output a g2p model in a file called `model-1`.
+  * You can store that file in another directory (e.g. `../data`)
+  * And when you call `build-voice.sh` next you can
+     1. Replace this line: `g2p.py --train lexicon.txt --devel 50% --write-model model-1 1> g2p-1.log 2>g2p-1.err`
+     2. with this line: `cp ../data/model-1 .`
+
+To make sure everything is working it might be best to run the voice building script on a very small corpus, just to make sure that your script gets all the way to the end. To change how many utterances you use to build your voice you need to change this line:
+```
+head -n100 txt.nonum.data > etc/txt.done.data
+```
+in the voice building script. Here we have decided to use 100 utterances. You can change this to any number, e.g. `-n20` would only use 20 utterances to build the voice and thus takes shorter time.
+
+## Troubleshooting
 Your builds might fail and the reason for that should hopefully be written to the `build.err` file in your voice building directory. Here are common build errors that can appear in `build.err`:
 * `LEXICON: Word <word> (plus features) not found in lexicon`: The word `<word>` does not appear in the lexicon. If this word is a part of your training prompt then it likely contains invalid characters. If `<word>` is e.g. `quiet` which is invalid because it contains non-Icelandic characters, then you have to change the line
 
@@ -345,13 +380,3 @@ Your builds might fail and the reason for that should hopefully be written to th
    * Create the new .zip file. From within e.g. `data/atli` do: `zip -r ../atli.zip *`
    * A new `data/atli.zip` should now have appeared.
    * Try building your model again using the new zip file.
-
-## Updates you will have to make to the recipe:
-1. Because of an expired certificate you might have to append `--no-check-certificate` when calling `wget`. For example:
-   * This `wget https://eyra.ru.is/gogn/${VOX}-small.zip`
-   * Becomes `wget https://eyra.ru.is/gogn/${VOX}-small.zip --no-check-certificate`
-2. The URL to the demo data has changed. You will have to change the URLs accordingly. For example:
-   * This `https://eyra.ru.is/data/${VOX}-small.zip`
-   * Becomes `wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip`
-3. The directory structure of the demo data has changed, there is now a top-level directory inside the .zip called `anon_example` The simplest way to deal with this is to add the following command to the voice building script right after downloading the .zip file:
-   * `mv -v anon_example/* .`
