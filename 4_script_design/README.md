@@ -1,5 +1,5 @@
 # Create a reading list
-Your task is to maximize diphone coverage in a list of 500 sentences. The coverage is 100% if all diphones appear at least onece in your reading list. You can use any method/algorithm you like to achieve this as long as you motivate your design choices.
+Your task is to maximize diphone coverage in a list of 500 sentences. The coverage is 100% if all diphones appear at least once in your reading list. You can use any method/algorithm you like to achieve this as long as you motivate your design choices.
 
 Your main goal should be to achieve a better coverage than by simply choosing a random set of 500 sentences which yields a coverage of approximately 67%.
 
