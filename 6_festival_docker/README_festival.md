@@ -1,5 +1,7 @@
 # Festival
 
+*Note: The voice building script that comes with the docker image is out of date. Please use [this script](./help/build-example-us-voice.sh) instead*
+
 ## 1. About Festival
 *The following is built on the [official Festival documentation](http://www.festvox.org/)*
 
@@ -321,15 +323,14 @@ Now it's time to generate synthesis samples. All the tools you need are located 
 
 
 ## Updates you will have to make to the recipe:
-
-1. Because of an expired certificate you might have to append `--no-check-certificate` when calling `wget`. For example:
-   * This `wget https://eyra.ru.is/gogn/${VOX}-small.zip`
-   * Becomes `wget https://eyra.ru.is/gogn/${VOX}-small.zip --no-check-certificate`
-2. The URL to the demo data has changed. You will have to change the URLs accordingly. For example:
+1. The URL to the demo data has changed. You will have to change the URLs accordingly. For example:
    * This `https://eyra.ru.is/data/${VOX}-small.zip`
    * Becomes `wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip`
-3. The
-4. The voice building script included in the docker image does not resample your dataset. Follow the resampling approach in e.g. [this script](/Users/atli/Work/tts-exercises/6_festival_docker/help/build-example-us-voice.sh) to resample your data. The section you need to add, after retrieving your data and before doing anything else is:
+2. Because of an expired certificate you might have to append `--no-check-certificate` when calling `wget`. For example:
+   * This `wget https://eyra.ru.is/gogn/${VOX}-small.zip`
+   * Becomes `wget https://eyra.ru.is/gogn/${VOX}-small.zip --no-check-certificate`
+3. The selected voice in the voice building script included in the docker image is hardcoded as `m1`. To make the script choose your selected voice you will have to change `cp ../data/m1-small.zip .` to `cp ../data/${VOX}-small.zip .`.
+4. The voice building script included in the docker image does not resample your dataset. Follow the resampling approach in e.g. [this script](./help/build-example-us-voice.sh) to resample your data. The section you need to add, after retrieving your data and before doing anything else is:
    ```
    for i in audio/*/*.wav
    do

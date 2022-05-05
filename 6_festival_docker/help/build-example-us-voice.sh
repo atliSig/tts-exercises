@@ -13,13 +13,17 @@ fi
 
 set -v
 
-VOX=anon_example
+if [ -v VOICE ] && [ $VOICE = "f" ]; then
+	VOX=f1
+else
+	VOX=m1
+fi
 
 # Set up the Festvox Clustergen build:
 $FESTVOXDIR/src/unitsel/setup_clunits lvl is $VOX
 
 # Unpack the wave files into the ./wav directory:
-#wget https://eyra.ru.is/gogn/${VOX}-small.zip
+wget https://eyra.ru.is/ttsdatawebstoragefolder/${VOX}-small.zip --no-check-certificate
 cp ../data/$VOX.zip .
 unzip $VOX.zip 1> unzip.log 2>unzip.err
 
@@ -41,10 +45,10 @@ rename 's/wav\/[^\.]*\./wav\/is/' wav/*.wav
 grep -v '"[^"]*[0-9cwq]' txt.complete.data > txt.nonum.data
 
 # This could either be the full set of prompts:
-cp -p txt.nonum.data etc/txt.done.data
+#cp -p txt.nonum.data etc/txt.done.data
 #
 # Or it could be a subset of prompts:
-#head -n50 txt.nonum.data > etc/txt.done.data
+head -n50 txt.nonum.data > etc/txt.done.data
 
 # Create a lexicon:
 
