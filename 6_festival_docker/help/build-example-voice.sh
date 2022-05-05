@@ -19,7 +19,6 @@ VOX=anon_example
 $FESTVOXDIR/src/clustergen/setup_cg lvl is $VOX
 
 # Unpack the wave files into the ./wav directory:
-cp ../data/${VOX}.zip .
 unzip ${VOX}.zip 1> unzip.log 2>unzip.err
 
 # Convert to 16KHz, single channel, 16 bit
@@ -57,7 +56,10 @@ python3 ../lvl_is_text/normalize.py info.json "-" --lobe | grep -o "[^ ]*" | sor
 cp ../lvl_is_text/framburdarordabok.txt lexicon.txt
 
 # copy the G2P model from the data directory:
-cp ../data/ipd_clean_slt2018.mdl .
+wget https://eyra.ru.is/gogn/ipd_clean_slt2018.mdl
+# or if this fails you will have to train your own:
+# g2p.py --train lexicon.txt --devel 50% --write-model model-1 1> g2p-1.log 2>g2p-1.err
+# and replace the --model parameter below with model-1
 g2p.py --model ipd_clean_slt2018.mdl --apply vocabulary.txt --encoding utf-8 > lexicon-prompts.txt
 
 # Create a compiled scm lexicon from lexicon
