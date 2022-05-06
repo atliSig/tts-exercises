@@ -11,6 +11,10 @@ mkdir $s_dir
 
 index=0
 
+# Note: the following is configured to work with unit selection
+# Use the following instead in lines 20 and 21
+#  -eval festvox/lvl_is_${VOX}_cg.scm \
+#  -eval "(voice_lvl_is_${VOX}_cg)" \
 cat noramlized_tests.txt | while read line || [[ -n $line ]]
 do
   echo $line |
