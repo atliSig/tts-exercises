@@ -12,8 +12,8 @@ We will be using Google Forms to carry out this task. An example MOS survey is a
 
 ## Technical details
 In your form you should survey:
-* 10 synthesized samples from your Festival TTS (you can choose to **either** use your unit selection voice **or** your clustergen voice)
-* 10 synthesized samples from your Ossian TTS
+* 10 synthesized samples from your Unit selection voice
+* 10 synthesized samples from your Clustergen voice
 * 5 ground truth samples
 Randomize the order of these so not do add unwanted bias. Make sure that the text being read is different in each sample, otherwise we could also add unwanted bias.
 
@@ -21,7 +21,7 @@ You should ask 5 individuals to complete your MOS survey. Jón and I will also d
 
 ## What to Turn In
 It is enough for you to simply turn in a link to your MOS survey. You should also complete which is a part of the final project:
-You should report on the results in a short document. For each group (Festival, Ossian, Ground truth) do the following:
+You should report on the results in a short document. For each group (Unit selection, Clustergen, Ground truth) do the following:
 * What is the average MOS score for each sample and across all samples in the group.
 * Create a bar chart with a bar for each rating value (1-5) and set the height as the corresponding number of responses for the given value.
 * Visualize, in your own selected way, how the individual participants respond to each question in your survey (e.g. plotting the MOS response as a function of the question index).
