@@ -9,7 +9,7 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
 
 ## Introduction and Background
 **(maximum 500 words)**
-* A description of what TTS is and the general process ofmaking    TTS models: i.e. collecting text and speech data,training models,    etc.
+* A description of what TTS is and the general process of making    TTS models: i.e. collecting text and speech data,training models,    etc.
 * Brief description on what we aim to achieve in script design,w.   r.t. unit selection TTS, and why it is important
 * Describe what we want in our recordings w.r.t. quality, prosody,    etc.
 * Brief description of Festival in general
@@ -25,7 +25,7 @@ You should turn in a PDF made in a text editor, e.g. LaTeX, Office Word, Google 
     * If you recorded your own data: describe your recording setup
     * If not: general information about the dataset.
     * Everyone: how did you trim the recordings, manually or automatically? If automatically, describe the method you used
-* Describe the recipe you used for the three different TTS models (or which steps are performed in these recipes):
+* Describe the recipe you used for the two different TTS models (or which steps are performed in these recipes):
     * Unit selection in Festival (steps)
     * Clustergen in Festival (steps)
 

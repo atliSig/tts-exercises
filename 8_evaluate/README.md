@@ -24,5 +24,5 @@ It is enough for you to simply turn in a link to your MOS survey. You should als
 You should report on the results in a short document. For each group (Festival, Ossian, Ground truth) do the following:
 * What is the average MOS score for each sample and across all samples in the group.
 * Create a bar chart with a bar for each rating value (1-5) and set the height as the corresponding number of responses for the given value.
-* Create a plot with sample index on the x-axis and MOS score on the y-axis where you plot the graph of each participant's MOS response to each question (on the same graph).
+* Visualize, in your own selected way, how the individual participants respond to each question in your survey (e.g. plotting the MOS response as a function of the question index).
 * The ratio of samples that were completely understood (the words are the same in the input and the survey)
